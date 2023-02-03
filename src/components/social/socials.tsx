@@ -1,8 +1,6 @@
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Tooltip as ReactTooltip } from 'react-tooltip'
 
 const StyledIcon = styled(Icon) <{ highlight?: string }>`
 a:visited { 
@@ -15,9 +13,9 @@ a:visited {
 `
 
 const WrappedIcon: React.FC<{ icon: string, href: string, highlight?: string }> = ({ icon, href, highlight }) => (
-    <a href={href} style={{ 'textDecoration': 'none', color: 'black' }}>
+    <Link href={href} style={{ 'textDecoration': 'none', color: 'black' }}>
         <StyledIcon width={'2em'} icon={icon} highlight={highlight} />
-    </a>
+    </Link>
 );
 
 export function SocialsComponent(): React.ReactElement {

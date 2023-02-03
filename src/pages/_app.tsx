@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import 'react-tooltip/dist/react-tooltip.css'
+import { FooterComponent } from '@/components/common/footer/footer';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -11,11 +12,10 @@ export default function App(props: AppProps) {
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
-        theme={{
-          colorScheme: 'light',
-        }}
       >
         <Component {...pageProps} />
+
+        <FooterComponent />
       </MantineProvider>
     </>
   );

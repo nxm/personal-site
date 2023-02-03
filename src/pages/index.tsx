@@ -1,8 +1,12 @@
 import Head from 'next/head'
-import { Container, Grid, Title, Text, Box, Stack, Image, Group } from '@mantine/core'
+import { Container, Grid, Title, Text, Box, Stack, Image, Group, Space } from '@mantine/core'
 import { SocialsComponent } from '@/components/social/socials'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { useEffect } from 'react';
+import { SpotifyComponent } from '@/components/spotify/spotify';
+import { StatusComponent } from '@/components/status/status';
+import { Icon } from '@iconify/react';
+import { Projects } from '@/components/project/project';
 
 
 export default function Home() {
@@ -16,12 +20,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
-        <Grid align={'center'} justify={'center'} py={'xl'}>
-          <Grid.Col span={6}>
+      <Container className='hero-section' size={'md'} w={'100vh'}>
+        <Grid align={'center'}  py={'xl'}>
+          <Grid.Col sm={12} lg={6}>
 
             <Stack spacing={'sm'}>
-              <Title>Jakub Szturomski</Title>
+              <Title>Jakub Szturomski <StatusComponent/></Title>
 
               <Text fw={500}>Hi there 👋🏼 I’m Jakub, I’m <Text underline component='span'>21</Text> years old</Text>
               <Text fw={500}>self-taught software engineer and cybersec enthusiast</Text>
@@ -31,15 +35,25 @@ export default function Home() {
               </Group>
             </Stack>
           </Grid.Col>
-          <Grid.Col span={6}>
-
+          <Grid.Col sm={12} lg={6}>
             <Image
               width={300}
               radius="xl"
               src="avatar.jpg"
             />
+
+            <Space h="xl" />
+            <Text>📍 Location: Gdynia, Poland</Text>
           </Grid.Col>
         </Grid>
+      </Container>
+
+
+      <Container size={'md'} mb={'xl'}>
+        <Title>My Projects</Title>
+        <Space h="xl" />
+
+        <Projects/>
       </Container>
     </>
   )
