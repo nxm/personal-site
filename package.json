@@ -9,13 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@iconify/react": "^4.1.0",
+    "@mantine/core": "^5.10.3",
+    "@mantine/hooks": "^5.10.3",
+    "@mantine/next": "^5.10.3",
     "@next/font": "13.1.6",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/styled-components": "^5.1.26",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-tooltip": "^5.7.4",
+    "styled-components": "^5.3.6",
     "typescript": "4.9.5"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
