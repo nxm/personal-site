@@ -23,22 +23,21 @@ export default function Home() {
             <Stack spacing={'sm'}>
               <Title>Jakub Szturomski</Title>
 
-              <Text>Hi there 👋🏼 I’m Jakub, I’m <Text underline component='span'>21</Text> years old</Text>
-              <Text>self-taught software engineer and cybersec enthusiastic</Text>
+              <Text fw={500}>Hi there 👋🏼 I’m Jakub, I’m <Text underline component='span'>21</Text> years old</Text>
+              <Text fw={500}>self-taught software engineer and cybersec enthusiast</Text>
 
               <Group spacing={'sm'}>
-              <SocialsComponent />
+                <SocialsComponent />
               </Group>
             </Stack>
           </Grid.Col>
           <Grid.Col span={6}>
 
-          <Image
-          width={300}
-        radius="xl"
-        src="avatar.jpg"
-        alt="Random unsplash image"
-      />
+            <Image
+              width={300}
+              radius="xl"
+              src="avatar.jpg"
+            />
           </Grid.Col>
         </Grid>
       </Container>
