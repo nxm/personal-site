@@ -52,7 +52,7 @@ export function SpotifyComponent(): React.ReactElement {
     
 
     useEffect(() => {
-        const ws = new WebSocket(`ws://${ENDPOINT}/api/v1/spotify/currently-playing`);
+        const ws = new WebSocket(`wss://${ENDPOINT}/api/v1/spotify/currently-playing`);
         ws.onmessage = function(evt) {
             console.log("ws onmessage:" + evt.data);
             setSpotifyData(JSON.parse(evt.data));
