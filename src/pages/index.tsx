@@ -33,6 +33,8 @@ export default function Home() {
               <Group spacing={'sm'}>
                 <SocialsComponent />
               </Group>
+
+              <SpotifyComponent/>
             </Stack>
           </Grid.Col>
           <Grid.Col sm={12} lg={6}>

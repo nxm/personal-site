@@ -110,6 +110,12 @@ export function Projects(): React.ReactElement {
                 image="projects/ogclaims.png"
                 link="https://og.claims"
                 />
+            <ProjectComponent
+                title="NixHost.pl (in progress)"
+                description="nixhost.pl is a hosting services for websites and applications."
+                image="projects/nixhost.jpg"
+                link="#"
+                />
         </Stack>
         </>
     )

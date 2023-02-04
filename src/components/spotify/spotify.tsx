@@ -1,5 +1,10 @@
+import { SpotifyCurrentTrackType } from "@/types/spotifyCurrentTrack"
 import { Box, Text } from "@mantine/core"
+import { useEffect, useState } from "react"
 import styled from "styled-components"
+import io from "socket.io-client";
+import useWebSocket from "react-use-websocket";
+import { ENDPOINT } from "@/api/api";
 
 const Container = styled.div<{ visible: boolean }>`
     display: block;
@@ -43,17 +48,39 @@ const Fill = styled.div<{progress: number}>`
 
 export function SpotifyComponent(): React.ReactElement {
 
+    const [spotifyData, setSpotifyData] = useState<SpotifyCurrentTrackType>();
+    
+
+    useEffect(() => {
+        const ws = new WebSocket(`ws://${ENDPOINT}/api/v1/spotify/currently-playing`);
+        ws.onmessage = function(evt) {
+            console.log("ws onmessage:" + evt.data);
+            setSpotifyData(JSON.parse(evt.data));
+        }
+    }, []);
+
+    const calculateProgress = () => {
+        return spotifyData?.progress_ms! / spotifyData?.duration_ms! * 100
+    }
+
+    const millisecondsToTime = (milliseconds: number): string => {
+        const minutes = Math.floor(milliseconds / 60000);
+        const seconds = ((milliseconds % 60000) / 1000).toFixed(0);
+        return `${minutes}:${seconds.padStart(2, '0')}`;
+      }
+
     return (
         <>
-            <Container visible>
-                <SpotifyImage src={'https://i.scdn.co/image/ab67616d00001e02b9e81653e2fd9756511a37a2'}/>
+            <Container visible={spotifyData?.playing!}>
+                <SpotifyImage src={spotifyData?.image}/>
                 <ProgressBar>
-                    <Fill progress={99}/>
+                    <Fill progress={calculateProgress()}/>
                 </ProgressBar>
 
                 <Box m={'1em'}>
-                    <Text>Title</Text>
-                    <Text fz="sm" c="dimmed">Author</Text>
+                    <Text>{spotifyData?.title}</Text>
+                    <Text fz="sm" c="dimmed">{spotifyData?.artist}</Text>
+                    <Text>{millisecondsToTime(spotifyData?.progress_ms!)} / {millisecondsToTime(spotifyData?.duration_ms!)}</Text>
                 </Box>
             </Container>
         </>
