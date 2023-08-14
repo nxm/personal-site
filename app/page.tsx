@@ -11,7 +11,7 @@ import MailIcon from "@/assets/icons/MailIcon";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center px-2">
       <div className="z-10 max-w-5xl w-full items-center justify-center gap-10 font-mono text-sm lg:flex">
         <div className="flex flex-col justify-center">
           <div className="flex justify-center">
