@@ -30,7 +30,7 @@ export default function Home() {
                             <strong>security</strong> technologies.
                         </p>
                         <small>
-                            btw I code vim
+                            I use vim btw
                         </small>
                     </div>
 
