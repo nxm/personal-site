@@ -9,6 +9,7 @@ import TwitterXIcon from "@/assets/icons/TwitterXIcon";
 import LinkedinIcon from "@/assets/icons/LinkedinIcon";
 import MailIcon from "@/assets/icons/MailIcon";
 import GoodreadsIcon from "@/assets/icons/GoodreadsIcon";
+import CalendarIcon from "@/assets/icons/CalendarIcon";
 
 export default function Home() {
     return (
@@ -95,6 +96,13 @@ export default function Home() {
                                 rel="noopener noreferrer"
                             >
                                 <MailIcon className="stroke-white hover:stroke-indigo-700"/>
+                            </a>
+                            <a
+                                href="https://app.zencal.io/u/jakub"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <CalendarIcon className="stroke-white hover:stroke-blue-600"/>
                             </a>
                         </div>
                     </div>
