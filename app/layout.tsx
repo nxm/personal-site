@@ -20,6 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
 	  	<GoogleAnalytics gaId="G-Y24D0XXV0L" />
+      <Script
+            id="analytics"
+            data-domain="jakub.app"
+            src={`https://analytics.nixcode.net/js/script.js`}
+            strategy="lazyOnload"
+            defer={true}
+        ></Script>
       {children}
       <Analytics />
       </body>
